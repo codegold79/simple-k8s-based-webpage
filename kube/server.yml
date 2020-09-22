@@ -17,9 +17,12 @@ spec:
     spec:
       containers:
         - name: web-server
-          image: fgold/simple-webpage:1.0.1
+          image: fgold/simple-webpage:1.0.2
           ports:
             - containerPort: 8080
+          env:
+            - name: STATUSCODE
+              value: "200"
   strategy:
     type: RollingUpdate
     rollingUpdate:

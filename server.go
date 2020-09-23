@@ -29,10 +29,16 @@ func main() {
 }
 
 func envStatusHandler(w http.ResponseWriter, r *http.Request) {
+	var sleepTime int
 	code := validCode()
 
+	sleepTimes, ok := r.URL.Query()["sleep"]
+	if ok {
+		sleepTime = waitForSleep(w, sleepTimes)
+	}
+
 	req := Requests{
-		SleepTime:  0,
+		SleepTime:  sleepTime,
 		StatusCode: code,
 	}
 

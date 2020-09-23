@@ -11,5 +11,6 @@ WORKDIR /bin/
 
 COPY --from=build /go/src/app/build .
 COPY go-template.html .
+COPY favicon.ico .
 
 ENTRYPOINT [ "server" ]

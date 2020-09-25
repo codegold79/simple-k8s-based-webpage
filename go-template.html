@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-            h1 {
-                font-size: medium;
-            }
-        </style>
-        <meta charset="UTF-8">
-        <title>Simple Go Template Webpage Example</title>
-    </head>
-    <body>
-        <h1>Sleep Time Requested (millisecond)</h1>
-        {{.SleepTime}}
 
-        <h1>Response Requested (HTTP Status Code)</h1>
-        {{.StatusCode}}
-    </body>
+<head>
+    <style>
+        h1 {
+            font-size: large;
+        }
+
+        .args {
+            font-size: larger;
+        }
+
+        #image-credit {
+            font-style: italic;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Simple Go Template Webpage Example</title>
+</head>
+
+<body>
+    <h1>Sleep Time Requested (millisecond)</h1>
+    <p class="args">{{.SleepTime}}</p>
+
+    <h1>Response Requested (HTTP Status Code)</h1>
+    <p class="args">{{.StatusCode}}</p>
+
+    <img src="{{.GopherImagePath}}" alt="{{.GopherImageAlt}}" height="400">
+
+    <p id="image-credit">Thank you to Maria Letta for the awesome <a
+            href="https://github.com/MariaLetta/free-gophers-pack">Go gopher
+            images</a>.</p>
+</body>
+
 </html>
